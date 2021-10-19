@@ -45,12 +45,15 @@ include_once "./components/head.php";
       </div>
     <?php } ?>
 
+
     <form class="form" action="auth.php" method="POST">
-      <label for="email">E-mail</label>
-      <input type="email" name="email" id="email" />
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" />
-      <button type="submit">Login</button>
+      <div class="form_content">
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" />
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" />
+        <button type="submit">Login</button>
+      </div>
     </form>
   </div>
 </body>

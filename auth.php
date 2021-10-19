@@ -1,31 +1,24 @@
 <?php
+session_start();
 
-$email_auth = "adm@teste.com";
+session_unset();
+
+
+$email_auth = "adm@test.com";
 $password_auth = "123456";
 
-$errors = [];
-
-function non_empty_inputs()
-{
-  if (!isset($_POST['email'])) {
-    $errors[] = 'e-mail';
-  }
-  if (!isset($_POST['password'])) {
-    $errors[] = 'senha';
-  }
-
-  if (!empty($errors)) {
-    print_r($errors);
-  }
+if (!isset($_POST['email']) || $_POST['email'] !== $email_auth) {
+  $_SESSION['fail'] = true;
+  $_SESSION['bad_email'] = true;
+}
+if (!isset($_POST['password']) || $_POST['password'] !== $password_auth) {
+  $_SESSION['fail'] = true;
+  $_SESSION['bad_password'] = true;
 }
 
-non_empty_inputs();
-
-$email = $_POST['email'];
-$password = $_POST['password'];
-
-if ($email === $email_auth && $password === $password_auth) {
+if (!isset($_SESSION['fail'])) {
+  $_SESSION['logged'] = true;
   header('Location: ./home.php');
 } else {
-  header('Location: ./');
+  header('Location: ./index.php');
 }

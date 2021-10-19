@@ -1,5 +1,12 @@
 * {
   font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background-color: rgb(91, 44, 138);
 }
 
 body,
@@ -23,8 +30,10 @@ html {
 }
 
 .main {
+  margin-top: 40px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form {
@@ -32,10 +41,11 @@ html {
   flex-direction: column;
   align-items: flex-start;
   width: 60%;
-  margin: 80px;
   background-color: #eee;
   padding: 40px 0px 40px 40px;
   border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .form > label {
@@ -47,6 +57,7 @@ html {
   padding: 10px;
   border-radius: 8px;
   border: solid 1px #ccc;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .form > input:focus {
@@ -60,13 +71,76 @@ html {
   padding: 10px 20px;
   margin: 40px 0px 0px 60px;
   font-size: 1.5rem;
-  background-color: rebeccapurple;
   border-radius: 8px;
   border: none;
+  background-color: rebeccapurple;
   color: #fff;
-  transition: background-color 100ms ease-in;
+  cursor: pointer;
+  border: solid 1px #fff;
+  transition: background-color 200ms ease, color 200ms ease;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .form > button:hover {
-  background-color: rgb(58, 23, 93);
+  color: rebeccapurple;
+  background-color: #fff;
+  border: solid 1px rebeccapurple;
+  transition: background-color 400ms ease, color 400ms ease;
+}
+
+.error_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.error {
+  background-color: lightcoral;
+  height: 60px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  width: 80%;
+}
+
+.error > p {
+  padding: 10px;
+  margin-left: 20px;
+  color: #111;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.logout {
+  background-color: rebeccapurple;
+  border: solid 1px #fff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 200ms ease, color 200ms ease;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logout:hover {
+  color: rebeccapurple;
+  background-color: #fff;
+  border: solid 1px rebeccapurple;
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+.logout_container {
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.home_title {
+  font-size: 4rem;
+  color: rebeccapurple;
+}
+
+.home_welcome {
+  font-size: 2rem;
 }

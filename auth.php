@@ -19,6 +19,8 @@ if (!isset($_POST['password']) || $_POST['password'] !== $password_auth) {
 if (!isset($_SESSION['fail'])) {
   $_SESSION['logged'] = true;
   header('Location: ./home.php');
+  exit();
 } else {
   header('Location: ./index.php');
+  exit();
 }
